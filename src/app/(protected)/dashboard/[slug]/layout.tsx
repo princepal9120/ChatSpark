@@ -1,3 +1,4 @@
+import Sidebar from '@/components/global/Sidebar';
 import React from 'react'
 
 type Props = {
@@ -11,7 +12,7 @@ const Layout = ({ children, params}: Props) => {
   return (
     <div>
         {/* sidebar */}
-        <Sidebar/>
+        <Sidebar slug={params.slug}/>
         {/* Navbar */}
     </div>
   )
