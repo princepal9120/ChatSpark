@@ -92,7 +92,7 @@ export default function Home() {
             </div>
             <div className="relative h-40 md:h-80 w-full  mt-10">
               <Image
-                src="/Ig-creators.png"
+                src="/lg-creators.png"
                 alt="Community member"
                 fill
                 className="object-cover"
