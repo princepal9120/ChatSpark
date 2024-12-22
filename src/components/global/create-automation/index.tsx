@@ -12,7 +12,7 @@ const CreateAutomation = (props: Props) => {
     bg-gradient-to-br from-[#3352CC]  to-[#1C2D70] hover:bg-gradient-to-br hover:from-[#9685DB] hover:via-[#9434E6] hover:to-[#CC38D4] hover:opacity-80">
         <Loader state={false}>
             <AutomationDuoToneWhite/>
-            <p className="text-lg">Create an automation</p>
+            <p className="lg:inline hidden">Create an automation</p>
         </Loader>
     </Button>
   );
