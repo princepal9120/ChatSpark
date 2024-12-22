@@ -18,7 +18,7 @@ const Items = ({ page, slug }: Props) => {
         page === item.label && "bg-[#0f0f0f]",
         page === slug && item.label === "home"
           ? "bg-[#0f0f0f]"
-          : "text-[#9B9CA0]"
+          : "text-[#e7e8ea]"
       )}
     >
       {item.icon}
