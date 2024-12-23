@@ -1,4 +1,4 @@
-
+import { QueryClient} from '@tanstack/react-query'
 import InfoBar from "@/components/global/navbar";
 import Sidebar from "@/components/global/Sidebar";
 import React from "react";
@@ -11,6 +11,7 @@ type Props = {
 const Layout = ({ children, params }: Props) => {
   //Query
   //WIP : query client fetch dta
+  const query =new QueryClient()
   return (
     <div className="p-3">
     <Sidebar slug={params.slug} />
