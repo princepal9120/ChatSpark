@@ -1,6 +1,5 @@
-import { getAllAutomations, getAutomationInfo } from '@/actions/automations'
+import { getAllAutomations } from '@/actions/automations'
 import { onUserInfo } from '@/actions/user'
-import { client } from '@/lib/prisma'
 import { QueryClient, QueryFunction } from '@tanstack/react-query'
 
 const prefetch = async (
@@ -14,7 +13,22 @@ const prefetch = async (
     staleTime: 60000,
   })
 }
-export const PrefetchUserProfile = async()=>{
 
-    return await prefetch(client, onUserInfo, 'user-profile');
+export const PrefetchUserProfile = async (client: QueryClient) => {
+  return await prefetch(client, onUserInfo, 'user-profile')
+}
+
+export const PrefetchUserAutnomations = async (client: QueryClient) => {
+  return await prefetch(client, getAllAutomations, 'user-automations')
+}
+
+export const PrefetchUserAutomation = async (
+  client: QueryClient,
+  automationId: string
+) => {
+  return await prefetch(
+    client,
+    () => getAutomationInfo(automationId),
+    'automation-info'
+  )
 }
