@@ -2,16 +2,18 @@ import { QueryClient} from '@tanstack/react-query'
 import InfoBar from "@/components/global/navbar";
 import Sidebar from "@/components/global/Sidebar";
 import React from "react";
+import { PrefetchUserProfile } from '@/react-query/prefetch';
 
 type Props = {
   children: React.ReactNode;
   params: { slug: string };
 };
 
-const Layout = ({ children, params }: Props) => {
+const Layout = async ({ children, params }: Props) => {
   //Query
   //WIP : query client fetch dta
   const query =new QueryClient()
+  await PrefetchUserProfile()
   return (
     <div className="p-3">
     <Sidebar slug={params.slug} />

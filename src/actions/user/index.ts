@@ -47,10 +47,19 @@ export const onBoardUser = async () => {
       }
        }
     }
-    const created= await createUser(user.id, user.firstName user.lastName, user.emailAddresses[0].emailAddress)
+    const created= await createUser(user.id, user.firstName! ,user.lastName!, user.emailAddresses[0].emailAddress)
     return { status : 201, data: created}
   } catch (error) {
     console.log(error);
     return { status: 500}
+  }
+};
+
+export const onUserInfo = async () => {
+  const user = await onCurrentUser();
+  try {
+    const profile = await findUser(user.id);
+  } catch (error) {
+    
   }
 };
