@@ -1,7 +1,7 @@
 "use server";
 
 import { onCurrentUser } from "../user";
-import { createAutomation } from "./queries";
+import { createAutomation, getAllAutomation } from "./queries";
 
 export const createAutomations = async () => {
   const user = await onCurrentUser();
@@ -15,6 +15,15 @@ export const createAutomations = async () => {
 };
 
 export const getAllAutomations = async () => {
+    const user = await onCurrentUser();
+    try{
+        const automations =await getAllAutomation(user.id);
+        if(automations) return {status:200, data: automations.automations}
+        return { status: 404};
+    }catch(err){
+        console.log(err);
+        return { status:500};
+    }
     
 };
 
