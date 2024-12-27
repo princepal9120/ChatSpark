@@ -11,7 +11,7 @@ import { ReactQueryProvider } from '@/providers/react-query'
 const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Slide',
+  title: 'SparkChat',
   description: 'Automate DMs and comments on instagram',
 }
 
